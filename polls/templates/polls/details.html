@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+<body>
+
+<p style="color:rgb(11,234,52); font-size:20px;">{{ questions }} </p>
+
+<form action="{% url 'polls:vote' questions.id %}" method="post">
+
+    {% csrf_token %}
+    {% for each in questions.choice_set.all %}
+    <input type="radio" name="choice" id="choice {{each.id}}" value="{{each.id}}">{{each.choice}}</input>
+    {% endfor%}
+    <br>
+    <input type="submit" value="Vote!">
+</form>
+</body>
+</html>

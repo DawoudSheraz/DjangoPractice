@@ -1,0 +1,16 @@
+.header{
+        text-align : center;
+ }
+
+ .link_style{
+        text-decoration:none;
+        color:rgba(112,134,233,0.9);
+        font-size : 20px;
+      font-family: Helvetica;
+        }
+
+        .link_style:hover{
+        color:red;
+        font-size: 25px;
+
+        }

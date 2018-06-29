@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+    <meta charset="UTF-8">
+    <title>Details </title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+
+        .data_view{
+        color: rgb(123,45,198);
+        font-size:18px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<h2 class="header">Personal Information</h2>
+
+
+<div class="header"><span>Name: </span> <span class="data_view"> {{profile.name}} </span></div>
+<br>
+<div class="header"><span>Age: </span> <span class="data_view"> {{profile.age}} </span></div>
+<br>
+<div class="header"><span>Address: </span> <span class="data_view">{{profile.address}}</span></div>
+<br>
+
+<div class="header">
+    <span>Gender: </span> <span class="data_view">{{profile.gender}}</span>
+</div>
+<br>
+<div class="header"><span>Experience: </span> <span class="data_view">{{profile.experience}} year(s)</span></div>
+<br>
+
+<div class="header"><a class="link_style" href="{% url 'user_profiling:index'%}">Back</a></div>
+
+</body>
+</html>

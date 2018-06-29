@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+
+<h2 class="header">Edit Information</h2>
+    <form method="post" action ="{%url 'user_profiling:editSave' %}">
+     {% csrf_token %}
+        <div class="header"> <span>Name </span> <input type="text" maxlength="100" name="name" value="{{profile.name}}" readonly> </div> <br>
+        <div class="header"> <span>Age </span> <input type="number" min="20" name="age" value="{{profile.age}}" readonly> </div> <br>
+        <div class="header"> <span>Address </span> <input type="text" maxlength="100" name="address" value="{{profile.address}}" required> </div> <br>
+
+        <div class="header">
+            <input type="radio" name="gender" value="Male" required> Male </input>
+            <input type="radio" name="gender" value="Female"> Female </input>
+            <input type="radio" name="gender" value="X"> X </input>
+        </div>
+
+        <div class="header"> <span>Experience </span> <input type="number" min="0" name="experience" value="{{profile.experience}}" required> </div> <br>
+
+        <div class="header"><input type="submit" value="Submit!"></div>
+    </form>
+</body>
+</html>
