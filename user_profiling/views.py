@@ -3,9 +3,11 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from rest_framework import generics
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from .models import UserProfile
+from .serializers import UserProfileSerializer
 
 
 # Create your views here.
@@ -103,7 +105,12 @@ def EditSave(request):
     return HttpResponseRedirect(reverse("user_profiling:index"))
 
 
+# API Views
 
+class UserListAPIView(generics.ListCreateAPIView):
+
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
 
 
 

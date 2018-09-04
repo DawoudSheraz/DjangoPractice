@@ -15,6 +15,8 @@ urlpatterns = [
     url(r'^deleteDataInput/$', views.deleteInput, name="deleteInput"),
     url(r'^delete/$', views.deleteData, name="delete"),
 
+    url(r'^api/list/$', views.UserListAPIView.as_view(), name='api_list')
+
 
 
 ]
