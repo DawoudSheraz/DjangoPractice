@@ -16,3 +16,12 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Skills(models.Model):
+
+    title = models.CharField(max_length=20)
+    users = models.ManyToManyField(UserProfile, related_name='user_skills')
+
+    def __str__(self):
+        return self.title
