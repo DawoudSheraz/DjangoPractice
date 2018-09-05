@@ -6,8 +6,8 @@ from django.views import generic
 from rest_framework import generics
 from django.urls import reverse
 from django.http import HttpResponseRedirect
-from .models import UserProfile
-from .serializers import UserProfileSerializer
+from .models import UserProfile, Skills
+from .serializers import UserProfileSerializer, SkillsSerializer
 
 
 # Create your views here.
@@ -111,6 +111,12 @@ class UserListAPIView(generics.ListCreateAPIView):
 
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
+
+
+class SkillsListAPIView(generics.ListCreateAPIView):
+
+    queryset = Skills.objects.all()
+    serializer_class = SkillsSerializer
 
 
 
