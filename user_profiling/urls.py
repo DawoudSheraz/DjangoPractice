@@ -16,7 +16,9 @@ urlpatterns = [
     url(r'^delete/$', views.deleteData, name="delete"),
 
     url(r'^api/user/$', views.UserListAPIView.as_view(), name='api_list'),
-    url(r'^api/skills/$', views.SkillsListAPIView.as_view(), name='api_skill_list')
+    url(r'^api/skills/$', views.SkillsListAPIView.as_view(), name='api_skill_list'),
+
+    url(r'^api/auth_user/$', views.AuthUserAPIView.as_view(), name='api_user_sign_something')
 
 
 

@@ -7,7 +7,7 @@ from rest_framework import generics
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from .models import UserProfile, Skills
-from .serializers import UserProfileSerializer, SkillsSerializer
+from .serializers import *
 
 
 # Create your views here.
@@ -119,4 +119,6 @@ class SkillsListAPIView(generics.ListCreateAPIView):
     serializer_class = SkillsSerializer
 
 
+class AuthUserAPIView(generics.CreateAPIView):
 
+    serializer_class = AuthUserSerializer
